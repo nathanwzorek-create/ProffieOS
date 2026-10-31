@@ -164,7 +164,7 @@ public:
       SaberBase::TurnOn();
       LSanalogWrite(CLUTCH_PIN, 6000);
       headstart_tighten_time_ = millis() + 140;
-      clutch_return_time_ = millis() + 280;
+      clutch_return_time_ = millis() + 400;
       anchor_angle_ = fusor.pov_angle();
     }
     
