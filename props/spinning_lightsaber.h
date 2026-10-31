@@ -162,9 +162,9 @@ public:
     if (millis() > ignite_timer_ && ignite_timer_ > 0) {
       ignite_timer_ = 0;
       SaberBase::TurnOn();
-      LSanalogWrite(CLUTCH_PIN, 6000);
+      LSanalogWrite(CLUTCH_PIN, 8000);
       headstart_tighten_time_ = millis() + 140;
-      clutch_return_time_ = millis() + 400;
+      clutch_return_time_ = millis() + 450;
       anchor_angle_ = fusor.pov_angle();
     }
     
@@ -298,7 +298,7 @@ public:
     if (is_on_) return;
     is_on_ = true;
     ignite_timer_ = millis() + 300;
-    LSanalogWrite(CHASSIS_SPIN_PIN, 4000); // TUNE TO NON-CRITICAL SPEED FOR YOUR SABER, IGNITION
+    LSanalogWrite(CHASSIS_SPIN_PIN, 6000); // TUNE TO NON-CRITICAL SPEED FOR YOUR SABER, IGNITION
     retracted_ = false;
     activation_buffer_ = millis() + 4200;
     time_up_ = millis() + 16000;
